@@ -21,7 +21,8 @@ body {
   background: linear-gradient(to top left, #28b487, #7dd56f);
 }
 
-.show-modal {
+.show-modal,
+.show-modal2 {
   font-size: 2rem;
   font-weight: 600;
   padding: 1.75rem 3.5rem;
@@ -34,6 +35,16 @@ body {
 }
 
 .close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.close-modal2 {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
@@ -58,7 +69,19 @@ p {
 .hidden {
   display: none;
 }
+.modal2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
 
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
 .modal {
   position: absolute;
   top: 50%;
