@@ -6,32 +6,53 @@
 //   }
 // });
 
-const secretNumber = Math.floor(Math.random() * 20) + 1;
-
+let secretNumber = Math.floor(Math.random() * 20) + 1;
+const body = document.querySelector('body');
+const message = document.querySelector('.message');
+const score = document.querySelector('.score');
+const myNumber = document.querySelector('.number');
+const myGuess = document.querySelector('.guess');
+const highScore = document.querySelector('.highscore');
 let myScore = Number(document.querySelector('.score').textContent);
+
+let myHighScore = 0;
 
 document.querySelector('.check').addEventListener('click', e => {
   const guess = Number(document.querySelector('.guess').value);
   let myString = ``;
   if (myScore <= 1) {
     myString = `You Lose`;
-    document.querySelector('body').style.backgroundColor = 'red';
+    body.style.backgroundColor = 'red';
   } else if (!guess) {
     myString = '🚫 Not a valid number!';
   } else if (guess === secretNumber) {
     myString = 'You Found My Number';
-    document.querySelector('.number').textContent = secretNumber;
-    document.querySelector('body').style.backgroundColor = '#60b347';
+    myNumber.textContent = secretNumber;
+    body.style.backgroundColor = '#60b347';
+    if (myScore > myHighScore) {
+      myHighScore = myScore;
+      highScore.textContent = myHighScore;
+    }
   } else if (guess > secretNumber) {
     myString = 'Too High';
     myScore -= 1;
-    //document.querySelector('.guess').value = '';
+    myGuess.value = '';
   } else {
     myString = 'Too Low';
     myScore -= 1;
-    //document.querySelector('.guess').value = '';
+    myGuess.value = '';
   }
 
-  document.querySelector('.message').textContent = myString;
-  document.querySelector('.score').textContent = myScore;
+  message.textContent = myString;
+  score.textContent = myScore;
+});
+
+document.querySelector('.again').addEventListener('click', e => {
+  body.style.backgroundColor = '#222';
+  myScore = 20;
+  score.textContent = myScore;
+  secretNumber = Math.floor(Math.random() * 20) + 1;
+  myNumber.textContent = '?';
+  myGuess.value = '';
+  message.textContent = 'Start Guessing ...';
 });
