@@ -47,26 +47,3 @@ function openModal() {
       </p>
     </div>
  */
-
-// createModalBtn.addEventListener('click', () => {
-//   const myModal = document.createElement('div');
-//   myModal.classList.add('modal2', 'hidden');
-//   const myBtn = document.createElement('button');
-//   myBtn.innerHTML = `&times;`;
-//   myBtn.classList.add('close-modal2');
-//   myBtn.addEventListener('click', () => {
-//     myModal.classList.add('hidden');
-//   });
-//   const header = document.createElement('h1');
-//   header.textContent = 'My Second modal 😅';
-//   const myPara = document.createElement('p');
-//   const textNode = document.createTextNode(
-//     'jkchbdchwbehcbwdchjbdwcjbwwchbcjhbhjbdwjhcbjhcbdjhbchjbchjbchjbcjhcbjhdwbcjhcchjbchjbcwjhbdjhdbjhdbhcbjhcbwdjhcbchjbdchjbdjbdwjhcbjhcwbjhwcbdhjbcjhwbcjhdbcbcbcbcdwhbchdbwjcbdwc'
-//   );
-//   myPara.appendChild(textNode);
-//   myModal.appendChild(myBtn);
-//   myModal.appendChild(header);
-//   myModal.appendChild(myPara);
-//   document.querySelector('body').appendChild(myModal);
-//   myModal.classList.remove('hidden');
-// });
